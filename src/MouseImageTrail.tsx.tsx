@@ -166,21 +166,20 @@ const MouseImageTrail = ({
       onMouseMove={handleMouseMove}
     >
       {children}
-
-      // {images.map((img, index) => (
-  <div
-  key={index}
-  data-mouse-move-index={index}
-  className="pointer-events-none absolute left-0 top-0  w-[150px] bg-white shadow  p-2  rounded-md   ">
-    <img
-      src={img}
-      alt={`Mouse move image ${index}`}
-    className="h-auto w-full "
-    />
-  </div>
-))}
-
-
+      
+      {images.map((img, index) => (
+        <div
+          key={index}
+          data-mouse-move-index={index}
+          className="pointer-events-none absolute left-0 top-0 w-[100px] xl:w-[150px] bg-white shadow  p-2  rounded-md  opacity-0 "
+        >
+          <img
+            src={img}
+            alt={`Mouse move image ${index}`}
+            className="h-auto w-full "
+          />
+        </div>
+      ))}
     </div>
   );
 };
